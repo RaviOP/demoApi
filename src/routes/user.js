@@ -3,9 +3,7 @@ const { readUsers,
     readUser,
     createUser,
     updateUser,
-    deleteUser,
-    viewUser,
-    viewUsers } = require('../controllers/userController')
+    deleteUser } = require('../controllers/userController')
 
 
 //Create Users 
@@ -18,9 +16,5 @@ router.get('/users/:id', readUser)
 router.put('/users/:id', updateUser)
 //Delete User By Id
 router.delete('/users/:id', deleteUser)
-
-router.get('/view/:id', viewUser)
-
-router.get('/view/users', viewUsers)
 
 module.exports = router
