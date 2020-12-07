@@ -2,11 +2,11 @@
 
 Built Using Node,Express & MongoDB
 
-GET /users
-GET /users/:id
-POST /users
-PUT /users/:id
-DELETE /users/:id
+GET /users \
+GET /users/:id \
+POST /users \ 
+PUT /users/:id \
+DELETE /users/:id \
 
 ## GET REQUEST
 
