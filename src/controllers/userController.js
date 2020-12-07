@@ -1,7 +1,7 @@
 const User = require('../models/User')
 const fs = require('fs').promises
 
-let APP_URL = 'localhost:3000';
+let APP_URL = 'https://demo-api-node.herokuapp.com';
 
 let readUsers = async (req, res) => {
     try {
