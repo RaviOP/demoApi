@@ -7,7 +7,10 @@ let readUsers = async (req, res) => {
     try {
         const users = await User.find({})
         res.status(200)
-        res.send(users)
+        res.send({
+            Users: users,
+            Link: `${APP_URL}/view/users`
+        })
     } catch (error) {
         res.status(500).send(error)
     }
@@ -74,11 +77,20 @@ let deleteUser = async (req, res) => {
     }
 }
 
-let view = async (req, res) => {
+let viewUser = async (req, res) => {
     try {
         const id = req.params.id
         const user = await User.findById(id)
         res.json(user)
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
+let viewUsers = async (req, res) => {
+    try {
+        const users = await User.find({})
+        res.json(users)
     } catch (error) {
         res.status(500).send(error.message)
     }
@@ -90,5 +102,6 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
-    view
+    viewUser,
+    viewUsers
 }
