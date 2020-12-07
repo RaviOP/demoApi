@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
     },
     phone: {
         type: Number,
-        required: [true,'Please Enter Phone'],
+        required: [true, 'Please Enter Phone'],
+        unique: true,
         trim: true,
         validate: [/^\d{10}$/,'Please Enter a Valid Phone No.']
     }

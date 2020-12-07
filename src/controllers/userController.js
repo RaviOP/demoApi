@@ -20,10 +20,9 @@ let readUser = async (req, res) => {
         if (!user) {
             return res.send('No User Found')
         }
-        fs.writeFile(`files/${user._id}.json`, JSON.stringify(user), 'utf-8')
         res.send({
             User: user,
-            Link: `${APP_URL}/download/${user._id}`
+            Link: `${APP_URL}/view/${user._id}`
         })
         res.download("user")
     } catch (error) {
@@ -75,10 +74,11 @@ let deleteUser = async (req, res) => {
     }
 }
 
-let download = async (req, res) => {
+let view = async (req, res) => {
     try {
-        const fileName = req.params.id
-        res.download(`files/${fileName}.json`)
+        const id = req.params.id
+        const user = await User.findById(id)
+        res.json(user)
     } catch (error) {
         res.status(500).send(error.message)
     }
@@ -90,5 +90,5 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
-    download
+    view
 }

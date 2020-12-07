@@ -4,7 +4,7 @@ const { readUsers,
     createUser,
     updateUser,
     deleteUser,
-    download} = require('../controllers/userController')
+    view } = require('../controllers/userController')
 
 //Create Users 
 router.post('/users', createUser)
@@ -17,6 +17,6 @@ router.put('/users/:id', updateUser)
 //Delete User By Id
 router.delete('/users/:id', deleteUser)
 
-router.get('/download/:id', download)
+router.get('/view/:id', view)
 
 module.exports = router
