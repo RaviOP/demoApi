@@ -2,10 +2,10 @@
 
 Built Using Node,Express & MongoDB
 
-GET /users \
-GET /users/:id \
-POST /users \ 
-PUT /users/:id \
+GET /users <br/>
+GET /users/:id <br/>
+POST /users <br/> 
+PUT /users/:id <br/>
 DELETE /users/:id 
 
 ## GET REQUEST
