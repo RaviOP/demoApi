@@ -6,7 +6,7 @@ GET /users \
 GET /users/:id \
 POST /users \ 
 PUT /users/:id \
-DELETE /users/:id \
+DELETE /users/:id 
 
 ## GET REQUEST
 
