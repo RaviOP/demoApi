@@ -66,7 +66,7 @@ let updateUser = async (req, res) => {
 let deleteUser = async (req, res) => { 
     try {
         const id = req.params.id
-        const user = await User.findById(_id)
+        const user = await User.findById(id)
         await user.remove()
         if (!user) {
             res.status(404).send('User Not Found')
